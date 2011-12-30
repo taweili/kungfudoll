@@ -39,6 +39,19 @@
             android:text="3"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textSize="120px" android:textColor="#AA0000"/>
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="22dp"
+            android:layout_marginRight="48dp"
+            android:layout_toLeftOf="@+id/textView2"
+            android:text="感谢使用打击娃娃"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="70px" />
+
     </RelativeLayout>
 
 </LinearLayout>
