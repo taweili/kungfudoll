@@ -24,33 +24,54 @@
             android:layout_alignParentTop="true"
             android:layout_marginTop="31dp"
             android:layout_toRightOf="@+id/videoView1"
-            android:text="打击娃娃"
+            android:text="神拳无敌"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textSize="52px" />
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/videoView1"
-            android:layout_alignRight="@+id/textView1"
-            android:layout_marginBottom="74dp"
-            android:layout_marginRight="59dp"
-            android:text="3"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textSize="120px" android:textColor="#AA0000"/>
 
         <TextView
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:layout_marginBottom="22dp"
-            android:layout_marginRight="48dp"
-            android:layout_toLeftOf="@+id/textView2"
-            android:text="感谢使用打击娃娃"
+            android:layout_alignRight="@+id/videoView1"
+            android:layout_marginRight="78dp"
+            android:text="中国武术博物馆"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textSize="70px" />
+
+        <TextView
+            android:id="@+id/TextView01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/textView3"
+            android:layout_alignRight="@+id/textView1"
+            android:text="2000"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#AA0000"
+            android:textSize="70px" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/TextView01"
+            android:layout_below="@+id/textView1"
+            android:layout_marginLeft="28dp"
+            android:text="3"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#AA0000"
+            android:textSize="120px" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/TextView01"
+            android:layout_alignLeft="@+id/textView2"
+            android:layout_marginBottom="25dp"
+            android:text="速度"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textSize="50px" />
 
     </RelativeLayout>
 
