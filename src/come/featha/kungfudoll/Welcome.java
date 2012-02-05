@@ -58,6 +58,9 @@ public class Welcome extends Activity {
 		//wView.loadUrl("http://192.168.11.2:8090/release.html");
 		wView.loadUrl("http://127.0.0.1:8090/release.html");
 		//wView.loadUrl("http://192.168.11.3/flash/release.html");
+		
+		Tts.setContext(this);
+		Tts.sayTest("系统启动完毕");
 
 	}
 	
@@ -111,12 +114,48 @@ public class Welcome extends Activity {
 						Scanner sin = new Scanner(client.getInputStream());
 						String line = sin.nextLine();
 						
-						score = line;
-						wView.loadUrl("javascript:updateScore(\"" + score + "\");");
-						Log.e("socket", "update it");
 
+						if (line.contains("GET"))
+						{
+							PrintWriter writer = new PrintWriter(client.getOutputStream());
+							
+							try
+							{
+								int jsb = line.indexOf("jsoncallback=");
+								String param = line.substring(jsb + "jsoncallback=".length());
+								jsb = param.indexOf("&");
+								param = param.substring(0, jsb);
+								Log.e("socket", param);
+								writer.print(param);
+							}
+							catch (Exception e)
+							{
+								Log.e("socket", "not from json");
+							}
+							
+							writer.print("({score:\"" + score + "\", time:\"" + time + "\"})\n");
+							writer.flush();
+							writer.close();
+						}
+						else
+						{
+							if (line.contains(" "))
+							{
+								String str[] = line.split(" ");
+								score = str[0];
+								time = str[1];
+								wView.loadUrl("javascript:updateScore(\"" + score + "\", \"" + time + "\");");
+								Tts.sayTest(score);
+								
+								Log.e("socket", "update it");
+							}
+							
+						}
+						
 						sin.close();
 						client.close();
+						
+
 					}
 					catch (Exception e)
 					{
